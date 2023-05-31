@@ -1,3 +1,4 @@
+/* eslint-disable functional/no-expression-statements */
 import { useFormik } from 'formik';
 import axios from 'axios';
 import * as Yup from 'yup';

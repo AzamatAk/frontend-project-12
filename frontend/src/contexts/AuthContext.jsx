@@ -1,3 +1,6 @@
+/* eslint-disable functional/no-expression-statements */
+/* eslint-disable react/jsx-indent */
+/* eslint-disable react/jsx-closing-tag-location */
 import {
   createContext, useContext, useMemo, useState,
 } from 'react';

@@ -1,3 +1,4 @@
+/* eslint-disable functional/no-expression-statements */
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { useTranslation } from 'react-i18next';

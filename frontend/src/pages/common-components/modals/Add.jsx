@@ -1,3 +1,4 @@
+/* eslint-disable functional/no-expression-statements */
 import { useTranslation } from 'react-i18next';
 import { useFormik } from 'formik';
 import { useEffect, useRef } from 'react';

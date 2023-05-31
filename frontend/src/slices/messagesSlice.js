@@ -1,4 +1,5 @@
 /* eslint-disable no-param-reassign */
+/* eslint-disable functional/no-expression-statements */
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 import { deleteChannel, fetchContent, selectCurrentChannelId } from './channelsSlice';
 

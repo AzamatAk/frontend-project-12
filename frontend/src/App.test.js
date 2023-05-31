@@ -1,3 +1,4 @@
+/* eslint-disable functional/no-expression-statements */
 import { render, screen } from '@testing-library/react';
 import { test, expect } from '@playwright/test';
 import App from './App';

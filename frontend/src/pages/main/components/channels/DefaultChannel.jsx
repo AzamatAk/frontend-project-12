@@ -1,3 +1,4 @@
+/* eslint-disable functional/no-expression-statements */
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCurrentChannelId, setCurrentChannel } from '../../../../slices/channelsSlice';

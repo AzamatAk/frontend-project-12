@@ -1,4 +1,5 @@
 /* eslint-disable no-param-reassign */
+/* eslint-disable functional/no-expression-statements */
 import { createAsyncThunk, createSelector, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import routes from '../routes';

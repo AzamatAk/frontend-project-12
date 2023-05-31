@@ -1,3 +1,4 @@
+/* eslint-disable functional/no-expression-statements */
 import axios from 'axios';
 import { useFormik } from 'formik';
 import Button from 'react-bootstrap/Button';

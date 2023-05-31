@@ -1,3 +1,5 @@
+/* eslint-disable functional/no-expression-statements */
+/* eslint-disable functional/no-conditional-statements */
 import Form from 'react-bootstrap/Form';
 import { useFormik } from 'formik';
 import { useEffect, useRef } from 'react';
