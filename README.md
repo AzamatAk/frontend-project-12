@@ -22,7 +22,7 @@ Features:
 Installation:
 
 • Шаг 1 — Клонируем этот репозиторий
-git clone https://github.com/Scarecrow2510/frontend-project-12
+git clone https://github.com/AzamatAk/frontend-project-12
 
 • Шаг 2 — Переходим в корневую папку проекта
 cd frontend-project-12
