@@ -1,97 +1,48 @@
 /* eslint-disable no-param-reassign */
-/* eslint-disable functional/no-expression-statements */
-import { createAsyncThunk, createSelector, createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
-import routes from '../routes';
-
-export const loadingProcess = {
-  IDLE: 'IDLE',
-  LOADING: 'LOADING',
-  FAILING: 'FAILING',
-};
-
-export const fetchContent = createAsyncThunk(
-  'channels/fetchContent',
-  async (getAuthHeader) => {
-    const { data } = await axios.get(routes.contentPath(), { headers: getAuthHeader() });
-    return data;
-  },
-);
+import { createSlice } from '@reduxjs/toolkit';
 
 const channelsSlice = createSlice({
   name: 'channels',
   initialState: {
-    channels: [],
-    currentChannelId: '',
-    loadingStatus: loadingProcess.IDLE,
-    error: null,
+    allChannels: [],
+    currentActiveId: null,
   },
   reducers: {
-    setCurrentChannel(state, action) {
-      const channelId = action.payload;
-      state.currentChannelId = channelId;
+    addChannels: (state, action) => {
+      state.allChannels = action.payload;
     },
-    addChannel(state, action) {
-      const channel = action.payload;
-      state.channels = [...state.channels, channel];
+    addChannel: (state, action) => {
+      state.allChannels.push(action.payload);
     },
-    deleteChannel(state, action) {
-      const remoteChannelId = action.payload.id;
-      const { channels } = state;
-      const defaultChannelId = state.channels[0].id;
-      const { currentChannelId } = state;
-
-      state.channels = channels.filter((channel) => channel.id !== remoteChannelId);
-      state.currentChannelId = (currentChannelId === remoteChannelId)
-        ? defaultChannelId
-        : currentChannelId;
+    removeChannel: (state, action) => {
+      const { id } = action.payload;
+      const filteredChannels = state.allChannels.filter((channel) => channel.id !== id);
+      state.allChannels = filteredChannels;
+      state.currentActiveId = state.currentActiveId === id ? 1 : state.currentActiveId;
     },
-    updateChannel(state, action) {
-      const renamedChannel = action.payload;
-      const { channels } = state;
-      const updatedChannels = channels.map((channel) => (channel.id === renamedChannel.id
-        ? renamedChannel
-        : channel));
-
-      state.channels = updatedChannels;
-    },
-  },
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchContent.pending, (state) => {
-        state.loadingStatus = loadingProcess.LOADING;
-        state.error = null;
-      })
-      .addCase(fetchContent.fulfilled, (state, action) => {
-        const content = action.payload;
-
-        state.loadingStatus = loadingProcess.IDLE;
-        state.channels = content.channels;
-        state.currentChannelId = content.currentChannelId;
-        state.error = null;
-      })
-      .addCase(fetchContent.rejected, (state, action) => {
-        state.loadingStatus = loadingProcess.FAILING;
-        state.error = action.error;
+    renameChannel: (state, action) => {
+      const { id, name } = action.payload;
+      const updatedChannels = state.allChannels.map((channel) => {
+        if (channel.id === id) {
+          return { ...channel, name };
+        }
+        return channel;
       });
+      state.currentActiveId = state.currentActiveId === id ? id : state.currentActiveId;
+      state.allChannels = updatedChannels;
+    },
+    setActiveChannel: (state, action) => {
+      state.currentActiveId = action.payload;
+    },
   },
 });
 
-export const selectChannels = (state) => state.channels.channels;
-export const selectDefaultChannelId = (state) => state.channels.channels[0].id;
-export const selectCurrentChannelId = (state) => state.channels.currentChannelId;
-export const selectCurrentChannel = createSelector(
-  [selectChannels, selectCurrentChannelId],
-  (channels, currentChannelId) => channels.filter(({ id }) => id === currentChannelId),
-);
-export const selectChannelNames = createSelector(
-  selectChannels,
-  (channels) => channels.map(({ name }) => name),
-);
-export const selectLoadingStatus = (state) => state.channels.loadingStatus;
-export const selectFetchError = (state) => state.channels.error;
-
 export const {
-  setCurrentChannel, addChannel, deleteChannel, updateChannel,
+  addChannels,
+  addChannel,
+  removeChannel,
+  renameChannel,
+  setActiveChannel,
 } = channelsSlice.actions;
+
 export default channelsSlice.reducer;

@@ -1,107 +1,87 @@
 export default {
   translation: {
-    loader: 'Loading...',
-    navbar: {
-      mainLabel: 'Hexlet Chat',
-      logOutButton: 'Log out',
+    errors: {
+      network: 'Network issues',
+      server: 'Server issues',
+      loadData: 'Data loading failed',
+      loginValidation: 'Wrong username or password',
+      authorizationError: 'This nickname is already taken',
+      requiredField: 'This field is required',
+      tooShortPassword: 'At least 6 symbols needed',
+      passwordsDontMatch: 'Passwords must match',
+      mustBeUnique: 'Must be unique',
+      symbolsLength: 'From 3 to 20 characters',
+      toastifyAdd: 'Channel adding failed',
+      toastidyRemove: 'Channel removing failed',
+      toastifyRename: 'Channel renaming failed',
+      toastifyMessage: 'Message sending failed',
+      profanity: "Let's name it differently ;)",
     },
-    logInForm: {
-      header: 'Sign in',
-      usernameLabel: 'Your name',
-      passwordLabel: 'Password',
-      logInButton: 'Sign in',
-      logInFailed: 'Invalid username or password',
-      footer: {
-        signUpHeader: 'Don\'t have an account? ',
-        signUp: 'Sign up',
-      },
+    toastify: {
+      add: 'Channel created',
+      remove: 'Channel removed',
+      rename: 'Channel renamed',
     },
-    signUpForm: {
-      header: 'Sign up',
-      usernameLabel: 'Username',
-      passwordLabel: 'Password',
-      confirmPasswordLabel: 'Confirm password',
-      signUpButton: 'Sign up',
-      signUpFailed: 'This user already exists',
-      footer: {
-        loginHeader: 'Have an account? ',
-        backToLogin: 'Sign in',
-      },
-      validation: {
-        requiredField: 'Required field',
-        usernameLength: '3 to 20 characters',
-        passwordLength: 'At least 6 characters',
-        confirmPassword: 'Passwords must match',
+    signInPage: {
+      h1Text: 'Sign In',
+      loginButton: 'Enter chat',
+      footerMessage: "Don't you have an account? ",
+      registrationLink: 'Register here',
+      placeholders: {
+        username: 'Your nickname',
+        password: 'Password',
       },
     },
-    pageChat: {
-      channels: {
-        header: 'Channels',
-        addChannelButton: '+',
-        removeChannelButton: 'Remove',
-        renameChannelButton: 'Rename',
-        prefix: '#',
-        channelControl: 'Channel control',
-      },
-      messageForm: {
-        input: 'Enter your message...',
-        inputLabel: 'New message',
-        submitButton: 'Send',
-      },
-      pluralMessageCount: {
-        message_zero: '{{count}} messages',
-        message_one: '{{count}} message',
-        message_other: '{{count}} messages',
+    signUpPage: {
+      h1Text: 'Sign Up',
+      registerButton: 'Register',
+      username: 'Username',
+      password: 'Password',
+      confirmPassword: 'Confirm password',
+    },
+    mainPage: {
+      hexlet: 'Hexlet Chat',
+      signOut: 'Sign Out',
+    },
+    errorPage: {
+      h1Text: "404. Page's not found",
+      redirectMessage: 'But you can redirect to the ',
+      redirectLink: 'main page',
+    },
+    channels: {
+      channels: 'Channels',
+      dropdownToggle: {
+        delete: 'Remove',
+        rename: 'Rename',
       },
     },
-    pageNotFound: {
-      notFound: 'Page not found',
-      prompt: 'But you can go',
-      returnButton: 'to Home Page',
+    messages: {
+      messagesCounter: {
+        messagesCount_zero: ' messages',
+        messagesCount_one: ' message',
+        messagesCount_other: ' messages',
+      },
+      newMessage: 'Enter your message...',
+      placeholder: 'New message',
+      sendMessage: 'Send',
     },
     modals: {
-      addChannel: {
-        header: 'Add channel',
-        inputLabel: 'Channel name',
-        cancelButton: 'Cancel',
-        submitButton: 'Send',
-        validation: {
-          requiredField: 'Required field',
-          channelNameLength: '3 to 20 characters',
-          channelNameExists: 'Must be unique',
-        },
+      cancelButton: 'Cancel',
+      channelName: 'Channel name',
+      channelManagement: 'Channel management',
+      addModal: {
+        add: '+',
+        addChannel: 'Add channel',
+        addButton: 'Add',
       },
-      removeChannel: {
-        header: 'Remove channel',
-        body: 'Sure?',
-        cancelButton: 'Cancel',
-        removeButton: 'Remove',
+      removeModal: {
+        removeChannel: 'Remove channel',
+        deleteButton: 'Remove',
+        message: 'Are you sure?',
       },
-      renameChannel: {
-        header: 'Rename channel',
-        inputLabel: 'Channel name',
-        cancelButton: 'Cancel',
-        submitButton: 'Send',
-        validation: {
-          requiredField: 'Required field',
-          channelNameLength: '3 to 20 characters',
-          channelNameExists: 'Must be unique',
-        },
-      },
-      networkError: {
-        header: 'Something went wrong',
-        body: 'Refresh the page!',
-        button: 'Refresh',
-      },
-    },
-    notifications: {
-      success: {
-        channelCreated: 'Channel created',
-        channelRenamed: 'Channel renamed',
-        channelRemoved: 'Channel removed',
-      },
-      errors: {
-        connectionError: 'Connection error',
+      renameModal: {
+        renameChannel: 'Rename channel',
+        renameButton: 'Rename',
       },
     },
   },

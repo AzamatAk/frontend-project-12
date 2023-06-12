@@ -1,108 +1,88 @@
 export default {
   translation: {
-    loader: 'Загрузка...',
-    navbar: {
-      mainLabel: 'Hexlet Chat',
-      logOutButton: 'Выйти',
+    errors: {
+      network: 'Ошибка соединения',
+      server: 'Неполадки с сервером',
+      loadData: 'Не удалось загрузить данные',
+      loginValidation: 'Неверные имя пользователя или пароль',
+      authorizationError: 'Пользователь с таким именем уже есть',
+      requiredField: 'Обязательное поле',
+      tooShortPassword: 'Не менее 6 символов',
+      passwordsDontMatch: 'Пароли должны совпадать',
+      mustBeUnique: 'Должно быть уникальным',
+      symbolsLength: 'От 3 до 20 символов',
+      toastifyAdd: 'Не удалось добавить канал',
+      toastidyRemove: 'Не удалось удалить канал',
+      toastifyRename: 'Не удалось переименовать канал',
+      toastifyMessage: 'Не удалось отправить сообщение',
+      profanity: 'Давайте культурно ;)',
     },
-    logInForm: {
-      header: 'Войти',
-      usernameLabel: 'Ваш ник',
-      passwordLabel: 'Пароль',
-      logInButton: 'Войти',
-      logInFailed: 'Неверные имя пользователя или пароль',
-      footer: {
-        signUpHeader: 'Нет аккаунта? ',
-        signUp: 'Регистрация',
-      },
+    toastify: {
+      add: 'Канал создан',
+      remove: 'Канал удалён',
+      rename: 'Канал переименован',
     },
-    signUpForm: {
-      header: 'Регистрация',
-      usernameLabel: 'Имя пользователя',
-      passwordLabel: 'Пароль',
-      confirmPasswordLabel: 'Подтвердите пароль',
-      signUpButton: 'Зарегистрироваться',
-      signUpFailed: 'Такой пользователь уже существует',
-      footer: {
-        loginHeader: 'Есть аккаунт? ',
-        backToLogin: 'Войти',
-      },
-      validation: {
-        requiredField: 'Обязательное поле',
-        usernameLength: 'От 3 до 20 символов',
-        passwordLength: 'Не менее 6 символов',
-        confirmPassword: 'Пароли должны совпадать',
+    signInPage: {
+      h1Text: 'Вход',
+      loginButton: 'Войти',
+      footerMessage: 'Нет аккаунта? ',
+      registrationLink: 'Регистрация',
+      placeholders: {
+        username: 'Ваш ник',
+        password: 'Пароль',
       },
     },
-    pageChat: {
-      channels: {
-        header: 'Каналы',
-        addChannelButton: '+',
-        removeChannelButton: 'Удалить',
-        renameChannelButton: 'Переименовать',
-        prefix: '#',
-        channelControl: 'Управление каналом',
-      },
-      messageForm: {
-        input: 'Введите сообщение...',
-        inputLabel: 'Новое сообщение',
-        submitButton: 'Отправить',
-      },
-      pluralMessageCount: {
-        message_zero: '{{count}} сообщений',
-        message_one: '{{count}} сообщение',
-        message_few: '{{count}} сообщения',
-        message_many: '{{count}} сообщений',
+    signUpPage: {
+      h1Text: 'Регистрация',
+      registerButton: 'Зарегистрироваться',
+      username: 'Имя пользователя',
+      password: 'Пароль',
+      confirmPassword: 'Подтвердите пароль',
+    },
+    mainPage: {
+      hexlet: 'Hexlet Chat',
+      signOut: 'Выйти',
+    },
+    errorPage: {
+      h1Text: 'Страница не найдена',
+      redirectMessage: 'Но вы можете перейти ',
+      redirectLink: 'на главную страницу',
+    },
+    channels: {
+      channels: 'Каналы',
+      dropdownToggle: {
+        delete: 'Удалить',
+        rename: 'Переименовать',
       },
     },
-    pageNotFound: {
-      notFound: 'Страница не найдена',
-      prompt: 'Но вы можете перейти',
-      returnButton: 'на главную страницу',
+    messages: {
+      messagesCounter: {
+        messagesCount_zero: ' сообщений',
+        messagesCount_one: ' сообщение',
+        messagesCount_few: ' сообщения',
+        messagesCount_many: ' сообщений',
+      },
+      newMessage: 'Введите сообщение...',
+      placeholder: 'Новое сообщение',
+      sendMessage: 'Отправить',
     },
     modals: {
-      addChannel: {
-        header: 'Добавить канал',
-        inputLabel: 'Имя канала',
-        cancelButton: 'Отменить',
-        submitButton: 'Отправить',
-        validation: {
-          requiredField: 'Обязательное поле',
-          channelNameLength: 'От 3 до 20 символов',
-          channelNameExists: 'Должно быть уникальным',
-        },
+      cancelButton: 'Отменить',
+      channelName: 'Имя канала',
+      channelManagement: 'Управление каналом',
+      addModal: {
+        addChannel: 'Добавить канал',
+        addButton: 'Добавить',
+        add: '+',
       },
-      removeChannel: {
-        header: 'Удалить канал',
-        body: 'Уверены?',
-        cancelButton: 'Отменить',
-        removeButton: 'Удалить',
+      removeModal: {
+        removeChannel: 'Удалить канал',
+        deleteButton: 'Удалить',
+        message: 'Уверены?',
       },
-      renameChannel: {
-        header: 'Переименовать канал',
-        inputLabel: 'Имя канала',
-        cancelButton: 'Отменить',
-        submitButton: 'Отправить',
-        validation: {
-          requiredField: 'Обязательное поле',
-          channelNameLength: 'От 3 до 20 символов',
-          channelNameExists: 'Должно быть уникальным',
-        },
-      },
-      networkError: {
-        header: 'Что-то пошло не так',
-        body: 'Обновите страницу!',
-        button: 'Обновить',
-      },
-    },
-    notifications: {
-      success: {
-        channelCreated: 'Канал создан',
-        channelRenamed: 'Канал переименован',
-        channelRemoved: 'Канал удалён',
-      },
-      errors: {
-        connectionError: 'Ошибка соединения',
+      renameModal: {
+        renameChannel: 'Переименовать канал',
+        renameButton: 'Отправить',
       },
     },
   },

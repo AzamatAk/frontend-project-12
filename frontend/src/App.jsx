@@ -1,14 +1,20 @@
-import { ToastContainer } from 'react-toastify';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'react-toastify/dist/ReactToastify.css';
-import { AuthProvider } from './contexts/AuthContext.jsx';
-import AppRouter from './router/AppRouter.jsx';
+import Main from './components/Main';
+import AuthProvider from './contexts/AuthProvider';
+import NetworkProvider from './contexts/NetworkProvider';
+import ChatApiProvider from './contexts/ChatApiProvider';
+import LangProvider from './contexts/LanguageProvider';
 
-const App = () => (
-  <AuthProvider>
-    <AppRouter />
-    <ToastContainer />
-  </AuthProvider>
+const App = ({ socket }) => (
+  <ChatApiProvider socket={socket}>
+    <NetworkProvider>
+      <AuthProvider>
+        <LangProvider>
+          <Main />
+        </LangProvider>
+      </AuthProvider>
+    </NetworkProvider>
+  </ChatApiProvider>
 );
 
 export default App;
